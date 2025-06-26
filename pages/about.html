@@ -445,7 +445,7 @@
             font-size: 1rem;
         }
 
-        /* Photo Container */
+        /* Photo Container - FIXED */
         .photo-container {
             background: var(--white-clean);
             border-radius: 12px;
@@ -458,9 +458,12 @@
 
         .photo-container .profile-photo {
             width: 100%;
-            height: 500px;
+            height: auto; /* Changed from fixed height to auto */
+            min-height: 300px; /* Added minimum height */
+            max-height: 600px; /* Added maximum height to prevent too tall */
             border-radius: 0;
             object-fit: cover;
+            object-position: center top; /* Changed to show from top of image */
             border: none;
             box-shadow: none;
             transition: transform 0.3s ease;
@@ -494,6 +497,14 @@
             background: #005885;
             transform: translateY(-1px);
             color: var(--white-pure);
+        }
+
+        /* Bottom sidebar cards - NEW */
+        .bottom-sidebar-cards {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         /* About CTA Section */
@@ -595,7 +606,7 @@
                 min-height: 30vh;
             }
             
-            /* About page layout adjustments */
+            /* About page layout adjustments - UPDATED */
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -609,8 +620,15 @@
                 font-size: 1rem;
             }
             
+            /* Keep sidebar on top for mobile */
             .about-sidebar {
                 order: -1;
+            }
+            
+            /* Move bottom cards to after text on mobile */
+            .bottom-sidebar-cards {
+                order: 1;
+                margin-top: 2rem;
             }
             
             .sidebar-card {
@@ -626,7 +644,8 @@
             }
             
             .photo-container .profile-photo {
-                height: 300px;
+                min-height: 250px; /* Smaller minimum on mobile */
+                max-height: 400px;
             }
             
             .back-to-top {
@@ -722,8 +741,7 @@
                     <p>Plus, small business owners are refreshingly direct. No politics, no hidden agendas - just "here's my problem, can you help fix it?"</p>
                     
                     <h3>When I'm not working:</h3>
-                    <p>I'm a co-founder of a Technology Startup called HaloMap, and I volunteer with the Project Management Institute. When I'm not working or volunteering you'll find me spending time with my family.</p>
-                    
+                    <p>I'm a co-founder of a Technology Startup called <a href="https://halomap.io" target="_blank" rel="noopener">HaloMap</a>, and I volunteer with the Project Management Institute.</p>                    
                     <div class="credentials">
                         <h4>The formal stuff:</h4>
                         <ul>
@@ -732,6 +750,19 @@
                             <li>Prince2 Foundation & Practitioner</li>
                             <li>Graduate Certificate in Management</li>
                         </ul>
+                    </div>
+
+                    <!-- Bottom sidebar cards moved here for better flow -->
+                    <div class="bottom-sidebar-cards">
+                        <div class="sidebar-card">
+                            <h4>The honest truth</h4>
+                            <p>I'm not going to transform your business overnight with some magic framework. But I will help you identify what's actually slowing you down and give you practical steps to fix it.</p>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h4>How I work</h4>
+                            <p>No 50 page reports. No corporate jargon. Just clear recommendations, hands on help implementing them, and regular check ins to make sure they're actually working.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -744,17 +775,6 @@
                                 Connect on LinkedIn
                             </a>
                         </div>
-                    </div>
-                                    
-                    <!-- Sidebar Cards -->
-                    <div class="sidebar-card">
-                        <h4>The honest truth</h4>
-                        <p>I'm not going to transform your business overnight with some magic framework. But I will help you identify what's actually slowing you down and give you practical steps to fix it.</p>
-                    </div>
-
-                    <div class="sidebar-card">
-                        <h4>How I work</h4>
-                        <p>No 50 page reports. No corporate jargon. Just clear recommendations, hands on help implementing them, and regular check ins to make sure they're actually working.</p>
                     </div>
                 </div>
             </div>

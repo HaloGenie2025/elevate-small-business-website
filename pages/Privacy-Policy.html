@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Elevate Small Business</title>
+    <style>
+        /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
+        :root {
+            /* Core Brand Colors */
+            --teal-primary: #0f766e;
+            --gray-secondary: #374151;
+            
+            /* Strategic Accents */
+            --amber-action: #d97706;
+            --gold-highlight: #fbbf24;
+            
+            /* Supporting Colors */
+            --gray-text: #64748b;
+            --gray-light: #e2e8f0;
+            --white-clean: #f8fafc;
+            --white-pure: #ffffff;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-text);
+            background-color: var(--white-clean);
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: var(--teal-primary);
+            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h2 {
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white-pure);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-highlight);
+        }
+
+        /* ===== PRIVACY POLICY HERO ===== */
+        .privacy-hero {
+            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            color: var(--white-pure);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .privacy-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .privacy-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== PRIVACY POLICY CONTENT ===== */
+        .privacy-content {
+            padding: 80px 0;
+            background: var(--white-pure);
+        }
+
+        .privacy-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white-pure);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            border: 1px solid var(--gray-light);
+        }
+
+        .privacy-wrapper h2 {
+            color: var(--teal-primary);
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem 0;
+            font-weight: bold;
+            border-bottom: 2px solid var(--gray-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .privacy-wrapper h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .privacy-wrapper h3 {
+            color: var(--teal-primary);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .privacy-wrapper h4 {
+            color: var(--gray-secondary);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.8rem 0;
+            font-weight: 600;
+        }
+
+        .privacy-wrapper p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: var(--gray-text);
+        }
+
+        .privacy-wrapper ul, .privacy-wrapper ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--gray-text);
+        }
+
+        .privacy-wrapper li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .privacy-wrapper strong {
+            color: var(--gray-secondary);
+            font-weight: 600;
+        }
+
+        .privacy-wrapper em {
+            color: var(--teal-primary);
+            font-style: italic;
+        }
+
+        /* ===== CONTACT INFO BOX ===== */
+        .contact-box {
+            background: var(--white-clean);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--teal-primary);
+            margin: 2rem 0;
+        }
+
+        .contact-box h4 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .contact-box p {
+            margin-bottom: 0.5rem;
+            color: var(--gray-text);
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background: var(--amber-action);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-secondary);
+            color: var(--white-pure);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--gold-highlight);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== TABLE STYLING ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white-pure);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        th {
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: var(--white-clean);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .privacy-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .privacy-wrapper {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .privacy-wrapper h2 {
+                font-size: 1.5rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h2>Elevate Small Business</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Hero -->
+    <section class="privacy-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy matters to us. Learn how we collect, use, and protect your information.</p>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <div class="privacy-wrapper">
+                <p><strong>Effective Date:</strong> 26 June 2025<br>
+                <strong>Last Updated:</strong> 26 June 2025</p>
+
+                <h2>1. Introduction</h2>
+                <p>Elevate Small Business ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or interact with us.</p>
+
+                <h2>2. Information We Collect</h2>
+                
+                <h3>Personal Information</h3>
+                <p>We may collect the following personal information:</p>
+                <ul>
+                    <li><strong>Contact Information:</strong> Name, email address, phone number, business address</li>
+                    <li><strong>Business Information:</strong> Company name, industry, business size, role/position</li>
+                    <li><strong>Professional Details:</strong> Business challenges, goals, financial information (when relevant to our services)</li>
+                    <li><strong>Communication Records:</strong> Emails, meeting notes, consultation records</li>
+                    <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely through third-party payment processors)</li>
+                </ul>
+
+                <h3>Automatically Collected Information</h3>
+                <ul>
+                    <li><strong>Website Usage Data:</strong> IP address, browser type, pages visited, time spent on site</li>
+                    <li><strong>Cookies and Tracking:</strong> We use cookies to improve website functionality and user experience</li>
+                    <li><strong>Analytics Data:</strong> Website performance metrics through tools like Google Analytics</li>
+                </ul>
+
+                <h2>3. How We Use Your Information</h2>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Provide consulting and coaching services</li>
+                    <li>Communicate about our services and your projects</li>
+                    <li>Process payments and manage billing</li>
+                    <li>Improve our services and website functionality</li>
+                    <li>Send relevant business insights and updates (with your consent)</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Protect against fraud and security threats</li>
+                </ul>
+
+                <h2>4. Information Sharing and Disclosure</h2>
+                <p>We do not sell, trade, or rent your personal information. We may share information in these limited circumstances:</p>
+
+                <h3>Service Providers</h3>
+                <p>We may share information with trusted third-party service providers who assist us in:</p>
+                <ul>
+                    <li>Website hosting and maintenance</li>
+                    <li>Payment processing</li>
+                    <li>Email marketing platforms</li>
+                    <li>Cloud storage services</li>
+                    <li>Analytics and reporting tools</li>
+                </ul>
+
+                <h3>Legal Requirements</h3>
+                <p>We may disclose information when required by law or to:</p>
+                <ul>
+                    <li>Comply with legal processes</li>
+                    <li>Protect our rights and property</li>
+                    <li>Ensure user safety</li>
+                    <li>Respond to government requests</li>
+                </ul>
+
+                <h2>5. Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your information:</p>
+                <ul>
+                    <li><strong>Encryption:</strong> Sensitive data is encrypted in transit and at rest</li>
+                    <li><strong>Access Controls:</strong> Limited access to personal information on a need-to-know basis</li>
+                    <li><strong>Regular Security Reviews:</strong> Ongoing assessment of our security practices</li>
+                    <li><strong>Secure Communication:</strong> Professional email systems and secure file sharing platforms</li>
+                </ul>
+
+                <h2>6. Your Privacy Rights</h2>
+                
+                <h3>Australian Privacy Rights</h3>
+                <p>Under the Australian Privacy Act 1988, you have the right to:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to your personal information</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your information (subject to legal obligations)</li>
+                    <li><strong>Complaint:</strong> Lodge a complaint about our privacy practices</li>
+                </ul>
+
+                <h2>7. Data Retention</h2>
+                <p>We retain your information for as long as necessary to provide services and comply with legal obligations. Generally, we retain:</p>
+                <ul>
+                    <li><strong>Active Client Data:</strong> For the duration of our business relationship plus 7 years</li>
+                    <li><strong>Website Analytics:</strong> Up to 26 months</li>
+                    <li><strong>Marketing Communications:</strong> Until you unsubscribe or request deletion</li>
+                </ul>
+
+                <h2>8. Third-Party Services</h2>
+                <p>Our website and services may integrate with third-party platforms including Google Services (Analytics, Workspace, Ads), Social Media Platforms (LinkedIn, Facebook), and secure PCI-compliant payment processors.</p>
+
+                <h2>9. Contact Information</h2>
+                <div class="contact-box">
+                    <h4>Privacy Inquiries</h4>
+                    <p><strong>Elevate Small Business</strong><br>
+                    Email: privacy@elevatesmallbusiness.com.au<br>
+                    Phone: [Your Phone Number]<br>
+                    Address: [Your Business Address]</p>
+                </div>
+
+                <h2>10. Complaints Process</h2>
+                <p>If you believe we have breached your privacy:</p>
+                <ol>
+                    <li><strong>Contact Us First:</strong> Reach out using the contact information above</li>
+                    <li><strong>Internal Review:</strong> We will investigate and respond within 30 days</li>
+                    <li><strong>External Complaint:</strong> If unsatisfied, you may complain to the Office of the Australian Information Commissioner (OAIC):
+                        <ul>
+                            <li>Website: www.oaic.gov.au</li>
+                            <li>Phone: 1300 363 992</li>
+                            <li>Email: enquiries@oaic.gov.au</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>11. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy periodically. We will post the updated policy on our website, update the "Last Updated" date, and notify you of material changes via email or website notice.</p>
+
+                <p><em>Note: This Privacy Policy is designed to comply with Australian privacy laws. For specific legal advice regarding your obligations, please consult with a qualified legal professional.</em></p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Elevate Small Business. All rights reserved.</p>
+            <p>Practical business support for Australian small businesses.</p>
+            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
+
+    <script>
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Initially hide the button
+        document.getElementById('backToTop').style.display = 'none';
+    </script>
+</body>
+</html>

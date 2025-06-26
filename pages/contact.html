@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contact | Free Business Consultation | Elevate Small Business</title>
+    <meta name="description" content="Get in touch for your free business consultation. Expert support for Australian small businesses. Call, email, or book online - let's discuss how we can help your business thrive.">
+    <meta name="keywords" content="business consultation Adelaide, small business coach contact, business consulting South Australia, free consultation">
+    <meta name="author" content="Elevate Small Business">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Local SEO -->
+    <meta name="geo.region" content="AU-SA">
+    <meta name="geo.placename" content="Adelaide, South Australia">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h2>Elevate Small Business</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/services.html">Services</a></li>
+                <li><a href="/pages/contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Let's Discuss Your Business Goals</h1>
+            <p>Ready to take your small business to the next level? I'm here to help with practical solutions and expert guidance.</p>
+        </div>
+    </section>
+
+    <!-- Contact Options Section -->
+    <section class="contact-options">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Free Consultation -->
+                <div class="contact-card featured">
+                    <div class="contact-icon">🎯</div>
+                    <h3>Free Consultation</h3>
+                    <p>Let's discuss your business challenges and explore how I can help. No obligation - just valuable insights.</p>
+                    <a href="#contact-form" class="cta-button">Book Free Consultation</a>
+                </div>
+
+                <!-- Phone Contact -->
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Me</h3>
+                    <p>Prefer to talk? Give me a call for a quick chat about your business needs.</p>
+                    <a href="tel:+61400953189" class="contact-link">0400 953 189</a>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Me</h3>
+                    <p>Send me a message and I'll get back to you within 24 hours.</p>
+                    <a href="mailto:kylie@elevatesmallbusiness.com.au" class="contact-link">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <div class="form-content">
+                <div class="form-intro">
+                    <h2>Tell Me About Your Business</h2>
+                    <p>The more I know about your situation, the better I can help. Share your challenges and goals below.</p>
+                </div>
+
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Hidden field for spam protection --> <div style="display: none;"> <label>Don't fill this out if you're human: <input name="bot-field" /></label> </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Business/Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employees">Number of Employees *</label>
+                            <select id="employees" name="employees" required>
+                                <option value="">Select...</option>
+                                <option value="1">Just me (sole trader)</option>
+                                <option value="2-5">2-5 employees</option>
+                                <option value="6-10">6-10 employees</option>
+                                <option value="11-20">11-20 employees</option>
+                                <option value="20+">20+ employees</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <input type="text" id="industry" name="industry" placeholder="e.g., Retail, Technology, Healthcare">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="services">What type of support are you interested in?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="strategy">
+                                <span>Business Foundation & Strategy</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="operations">
+                                <span>Operational Efficiency</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="support">
+                                <span>Business Support & Capability</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="other">
+                                <span>Other (please specify in message)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell me about your current challenges and goals *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="e.g., We need help streamlining our operations or would like someone to help us with our marketing strategy. Our goal is to increase efficiency and grow sustainably."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">When would you like to start?</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select...</option>
+                            <option value="asap">As soon as possible</option>
+                            <option value="1-2weeks">Within 1-2 weeks</option>
+                            <option value="1month">Within 1 month</option>
+                            <option value="3months">Within 3 months</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Message</button>
+                    
+                    <p class="form-note">* Required fields. I'll respond within 24 hours to schedule your free consultation.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Based in Adelaide</h3>
+                    <p>Serving small businesses across South Australia and Australia-wide via digital consultations.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Response Time</h3>
+                    <p>I aim to respond to all inquiries within 24 hours, usually much sooner.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Consultation Process</h3>
+                    <p>Free initial consultation to understand your needs, followed by a customized proposal if we're a good fit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Elevate Small Business. All rights reserved.</p>
+            <p>Practical business support for Australian small businesses.</p>
+            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
+
+    <script>
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Initially hide the button
+        document.getElementById('backToTop').style.display = 'none';
+    </script>
+</body>
+</html>

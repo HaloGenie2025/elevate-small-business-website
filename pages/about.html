@@ -16,10 +16,629 @@
     <meta name="geo.region" content="AU-SA">
     <meta name="geo.placename" content="Adelaide, South Australia">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/style.css">
-    
+    <!-- Embedded Stylesheet with Mobile Navigation -->
+    <style>
+        /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
+        :root {
+            /* Core Brand Colors */
+            --teal-primary: #0f766e;
+            --gray-secondary: #374151;
+            
+            /* Strategic Accents */
+            --amber-action: #d97706;
+            --gold-highlight: #fbbf24;
+            
+            /* Supporting Colors */
+            --gray-text: #64748b;
+            --gray-light: #e2e8f0;
+            --white-clean: #f8fafc;
+            --white-pure: #ffffff;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-text);
+            background-color: var(--white-clean);
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
+        nav {
+            background: var(--teal-primary);
+            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h2 {
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white-pure);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-highlight);
+        }
+
+        .nav-links a.active {
+            color: var(--gold-highlight);
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            z-index: 1003;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100%;
+            background: var(--white-pure);
+            z-index: 1002;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .mobile-menu-header h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-close:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-links li {
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--gray-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            background-color: var(--white-clean);
+            color: var(--teal-primary);
+            padding-left: 2rem;
+        }
+
+        .mobile-nav-links a.active {
+            background-color: var(--teal-primary);
+            color: var(--white-pure);
+        }
+
+        .mobile-nav-links a.active:hover {
+            background-color: var(--teal-primary);
+            color: var(--white-pure);
+            padding-left: 1.5rem;
+        }
+
+        /* Prevent scrolling when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* ===== ABOUT HERO SECTION ===== */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white-pure);
+            padding: 80px 0;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content-with-photo {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-photo {
+            display: none;
+        }
+
+        .hero-text {
+            width: 100%;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-style: italic;
+            color: var(--gold-highlight);
+            line-height: 1.4;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 3;
+        }
+
+        /* ===== BUTTONS ===== */
+        .cta-button {
+            display: inline-block;
+            background: var(--amber-action);
+            color: var(--white-pure);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== ABOUT MAIN SECTION ===== */
+        .about-main {
+            padding: 80px 0;
+            background: var(--white-pure);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--gray-text);
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            color: var(--teal-primary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text h3 {
+            color: var(--teal-primary);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: bold;
+        }
+
+        .experience-list {
+            margin: 1.5rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .experience-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .experience-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--amber-action);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .experience-list strong {
+            color: var(--teal-primary);
+        }
+
+        /* Clean Bullet Points for Credentials Section */
+        .credentials {
+            background: var(--white-clean);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--teal-primary);
+        }
+
+        .credentials h4 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .credentials ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .credentials li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        .credentials li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--teal-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* About Sidebar */
+        .about-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--white-clean);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--gray-light);
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.08);
+        }
+
+        .sidebar-card h4 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .sidebar-card p {
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Photo Container */
+        .photo-container {
+            background: var(--white-clean);
+            border-radius: 12px;
+            border: 1px solid var(--gray-light);
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.08);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .photo-container .profile-photo {
+            width: 100%;
+            height: 500px;
+            border-radius: 0;
+            object-fit: cover;
+            border: none;
+            box-shadow: none;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .photo-container .profile-photo:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-caption {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .linkedin-button {
+            display: inline-block;
+            background: #0077b5;
+            color: var(--white-pure);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .linkedin-button:hover {
+            background: #005885;
+            transform: translateY(-1px);
+            color: var(--white-pure);
+        }
+
+        /* About CTA Section */
+        .about-cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            color: var(--white-pure);
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .about-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: var(--amber-action);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-secondary);
+            color: var(--white-pure);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--gold-highlight);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            /* Hide desktop navigation and show mobile menu */
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-overlay {
+                display: block;
+            }
+            
+            /* Hero adjustments */
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-hero {
+                padding: 40px 0;
+                min-height: 30vh;
+            }
+            
+            /* About page layout adjustments */
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .intro-text {
+                font-size: 1.2rem;
+            }
+            
+            .about-text {
+                font-size: 1rem;
+            }
+            
+            .about-sidebar {
+                order: -1;
+            }
+            
+            .sidebar-card {
+                padding: 1.5rem;
+            }
+            
+            .about-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .photo-container .profile-photo {
+                height: 300px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -29,12 +648,36 @@
             </div>
             <ul class="nav-links">
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/about.html" class="active">About</a></li>
                 <li><a href="/pages/services.html">Services</a></li>
-                <li><a href="/pages/contact.html" class="active">Contact</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/about.html" class="active">About</a></li>
+            <li><a href="/pages/services.html">Services</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- About Hero Section -->
     <section class="about-hero">
@@ -93,7 +736,7 @@
                 </div>
                 
                 <div class="about-sidebar">
-                    <!-- ADD THIS NEW PHOTO CONTAINER -->
+                    <!-- Photo Container -->
                     <div class="photo-container">
                         <img src="../images/kylie-photo.jpg" alt="Kylie Pedler-Jones" class="profile-photo">
                         <div class="photo-caption">
@@ -103,7 +746,7 @@
                         </div>
                     </div>
                                     
-                    <!-- EXISTING SIDEBAR CARDS -->
+                    <!-- Sidebar Cards -->
                     <div class="sidebar-card">
                         <h4>The honest truth</h4>
                         <p>I'm not going to transform your business overnight with some magic framework. But I will help you identify what's actually slowing you down and give you practical steps to fix it.</p>
@@ -127,12 +770,12 @@
         </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Elevate Small Business. All rights reserved.</p>
             <p>Practical business support for Australian small businesses.</p>
-            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a>
+            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a></p>
         </div>
     </footer>
 
@@ -140,6 +783,47 @@
     <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
 
     <script>
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const body = document.body;
+
+        // Open mobile menu
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            body.classList.add('menu-open');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        // Event listeners
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on a nav link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
         // Back to top functionality
         function scrollToTop() {
             window.scrollTo({

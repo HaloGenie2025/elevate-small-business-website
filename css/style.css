@@ -37,7 +37,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
 nav {
     background: var(--teal-primary);
     box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
@@ -81,6 +81,132 @@ nav .container {
 .nav-links a.active {
     color: var(--gold-highlight);
     font-weight: bold;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white-pure);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    z-index: 1003;
+}
+
+.mobile-menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: var(--white-pure);
+    z-index: 1002;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    background: var(--teal-primary);
+    color: var(--white-pure);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.mobile-menu-header h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: var(--white-pure);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--gray-secondary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    background-color: var(--white-clean);
+    color: var(--teal-primary);
+    padding-left: 2rem;
+}
+
+.mobile-nav-links a.active {
+    background-color: var(--teal-primary);
+    color: var(--white-pure);
+}
+
+.mobile-nav-links a.active:hover {
+    background-color: var(--teal-primary);
+    color: var(--white-pure);
+    padding-left: 1.5rem;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
 }
 
 /* ===== HOMEPAGE HERO SECTION ===== */
@@ -934,26 +1060,26 @@ nav .container {
 }
 
 /* ===== FOOTER ===== */
- footer {
-            background: var(--gray-secondary);
-            color: var(--white-pure);
-            text-align: center;
-            padding: 2rem 0;
-        }
+footer {
+    background: var(--gray-secondary);
+    color: var(--white-pure);
+    text-align: center;
+    padding: 2rem 0;
+}
 
-        footer p {
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
-        }
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
 
-        footer a {
-            color: var(--gold-highlight);
-            text-decoration: none;
-        }
+footer a {
+    color: var(--gold-highlight);
+    text-decoration: none;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer a:hover {
+    text-decoration: underline;
+}
 
 /* ===== UTILITY CLASSES ===== */
 .text-teal {
@@ -1108,9 +1234,17 @@ html {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    /* Navigation */
+    /* Hide desktop navigation and show mobile menu */
     .nav-links {
-        display: none; /* You'll need to add mobile menu functionality */
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-menu-overlay {
+        display: block;
     }
     
     /* Hero sections */
@@ -1218,5 +1352,27 @@ html {
     /* General grid adjustments */
     .service-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* Mobile menu specific adjustments */
+    .mobile-menu-btn {
+        z-index: 1003;
+    }
+    
+    /* Adjust cookie notice for mobile */
+    .cookie-notice-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cookie-btn {
+        flex: 1;
+        min-width: 120px;
     }
 }

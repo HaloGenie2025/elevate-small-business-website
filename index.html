@@ -72,8 +72,546 @@
     <!-- COMMENTED OUT - NO FAVICON YET -->
     <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- Embedded Stylesheet with Mobile Navigation -->
+    <style>
+        /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
+        :root {
+            /* Core Brand Colors */
+            --teal-primary: #0f766e;
+            --gray-secondary: #374151;
+            
+            /* Strategic Accents */
+            --amber-action: #d97706;
+            --gold-highlight: #fbbf24;
+            
+            /* Supporting Colors */
+            --gray-text: #64748b;
+            --gray-light: #e2e8f0;
+            --white-clean: #f8fafc;
+            --white-pure: #ffffff;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-text);
+            background-color: var(--white-clean);
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
+        nav {
+            background: var(--teal-primary);
+            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h2 {
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white-pure);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-highlight);
+        }
+
+        .nav-links a.active {
+            color: var(--gold-highlight);
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            z-index: 1003;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100%;
+            background: var(--white-pure);
+            z-index: 1002;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .mobile-menu-header h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--white-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-close:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-links li {
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--gray-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            background-color: var(--white-clean);
+            color: var(--teal-primary);
+            padding-left: 2rem;
+        }
+
+        .mobile-nav-links a.active {
+            background-color: var(--teal-primary);
+            color: var(--white-pure);
+        }
+
+        .mobile-nav-links a.active:hover {
+            background-color: var(--teal-primary);
+            color: var(--white-pure);
+            padding-left: 1.5rem;
+        }
+
+        /* Prevent scrolling when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white-pure);
+            padding: 80px 0;
+            text-align: center;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== BUTTONS ===== */
+        .cta-button {
+            display: inline-block;
+            background: var(--amber-action);
+            color: var(--white-pure);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== SERVICES PREVIEW ===== */
+        .services-preview {
+            padding: 80px 0;
+            background: var(--white-pure);
+        }
+
+        .services-preview h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--teal-primary);
+            font-weight: bold;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white-pure);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.15);
+            border-color: var(--teal-primary);
+        }
+
+        .service-card h3 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .service-card p {
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--teal-primary);
+            color: var(--white-pure);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: var(--amber-action);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-secondary);
+            color: var(--white-pure);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--gold-highlight);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== COOKIE NOTICE ===== */
+        .cookie-notice {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            color: var(--white-pure);
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            box-shadow: 0 -4px 20px rgba(15, 118, 110, 0.3);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.4s ease-in-out;
+            border-top: 3px solid var(--gold-highlight);
+        }
+
+        .cookie-notice.show {
+            transform: translateY(0);
+        }
+
+        .cookie-notice-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cookie-text p {
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .cookie-text a {
+            color: var(--gold-highlight);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .cookie-text a:hover {
+            color: var(--white-pure);
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cookie-accept {
+            background: var(--amber-action);
+            color: var(--white-pure);
+            border: 2px solid var(--amber-action);
+        }
+
+        .cookie-accept:hover {
+            background: #b45309;
+            border-color: #b45309;
+            transform: translateY(-1px);
+        }
+
+        .cookie-learn-more {
+            background: transparent;
+            color: var(--white-pure);
+            border: 2px solid var(--white-pure);
+        }
+
+        .cookie-learn-more:hover {
+            background: var(--white-pure);
+            color: var(--teal-primary);
+        }
+
+        .cookie-close {
+            background: none;
+            border: none;
+            color: var(--white-pure);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .cookie-close:hover {
+            opacity: 1;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            /* Hide desktop navigation and show mobile menu */
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-overlay {
+                display: block;
+            }
+            
+            /* Hero adjustments */
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            /* Service grid adjustments */
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Cookie notice mobile adjustments */
+            .cookie-notice-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cookie-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -84,13 +622,37 @@
                 <h2>Elevate Small Business</h2>
             </div>
             <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html" class="active">Home</a></li>
                 <li><a href="/pages/about.html">About</a></li>
                 <li><a href="/pages/services.html">Services</a></li>
                 <li><a href="/pages/contact.html">Contact</a></li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                ✕
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/services.html">Services</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -122,40 +684,17 @@
         </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Elevate Small Business. All rights reserved.</p>
             <p>Practical business support for Australian small businesses.</p>
-            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a>
+            <p><a href="/pages/Privacy-Policy.html">Privacy Policy</a></p>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
-
-    <script>
-        // Back to top functionality
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Show/hide back to top button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.getElementById('backToTop');
-            if (window.pageYOffset > 300) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-
-        // Initially hide the button
-        document.getElementById('backToTop').style.display = 'none';
-    </script>
 
     <!-- Cookie Notice -->
     <div id="cookieNotice" class="cookie-notice">
@@ -181,11 +720,69 @@
         </div>
     </div>
 
-    <!-- Main Website JavaScript -->
-    <script src="js/script.js"></script>
-
-    <!-- Cookie Notice JavaScript -->
     <script>
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const body = document.body;
+
+        // Open mobile menu
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            body.classList.add('menu-open');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        // Event listeners
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on a nav link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Initially hide the button
+        document.getElementById('backToTop').style.display = 'none';
+
         // Cookie Notice JavaScript
         function showCookieNotice() {
             const notice = document.getElementById('cookieNotice');

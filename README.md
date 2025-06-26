@@ -1,2 +1,2 @@
-# elevate-small-business-website
+# elevate-small-business
 Elevate Small Business Website

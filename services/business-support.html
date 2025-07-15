@@ -29,10 +29,15 @@
     <style>
         /* ===== BRAND COLORS ===== */
         :root {
-            --teal-primary: #0f766e;
-            --gray-secondary: #374151;
-            --amber-action: #d97706;
-            --gold-highlight: #fbbf24;
+            /* Core Brand Colors */
+            --navy-primary: #1e3a8a;
+            --light-blue-secondary: #7dd3fc;
+            
+            /* Strategic Accents */
+            --navy-action: #1e3a8a;
+            --light-blue-highlight: #7dd3fc;
+            
+            /* Supporting Colors */
             --gray-text: #64748b;
             --gray-light: #e2e8f0;
             --white-clean: #f8fafc;
@@ -63,8 +68,8 @@
 
         /* ===== NAVIGATION ===== */
         nav {
-            background: var(--teal-primary);
-            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            background: var(--navy-primary);
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -99,11 +104,11 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
         }
 
         .nav-links a.active {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
             font-weight: bold;
         }
 
@@ -118,7 +123,7 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.8) 0%, rgba(55, 65, 81, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(55, 65, 81, 0.8) 100%);
             color: var(--white-pure);
             padding: 80px 0;
             text-align: center;
@@ -149,7 +154,7 @@
         /* ===== BUTTONS ===== */
         .cta-button {
             display: inline-block;
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 15px 30px;
             text-decoration: none;
@@ -157,13 +162,13 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .cta-button:hover {
-            background: #b45309;
+            background: #1a365d;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         .secondary-button {
@@ -181,7 +186,7 @@
 
         .secondary-button:hover {
             background: var(--white-pure);
-            color: var(--teal-primary);
+            color: var(--navy-primary);
         }
 
         /* ===== MAIN CONTENT ===== */
@@ -197,7 +202,7 @@
         }
 
         .intro-section h2 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2rem;
             margin-bottom: 1.5rem;
             font-weight: bold;
@@ -211,7 +216,7 @@
         }
 
         .section-title {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 1.8rem;
             margin-bottom: 2rem;
             text-align: center;
@@ -230,26 +235,26 @@
             background: var(--white-pure);
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
             border: 1px solid var(--gray-light);
             transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.15);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
         }
 
         .card.teal-border {
-            border-left: 4px solid var(--teal-primary);
+            border-left: 4px solid var(--navy-primary);
         }
 
         .card.amber-border {
-            border-left: 4px solid var(--amber-action);
+            border-left: 4px solid var(--light-blue-highlight);
         }
 
         .card h4 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-size: 1.3rem;
             font-weight: bold;
@@ -270,7 +275,7 @@
             background: var(--white-pure);
             padding: 50px 40px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
             margin-bottom: 60px;
         }
 
@@ -300,7 +305,7 @@
         }
 
         .step-number {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             width: 50px;
             height: 50px;
@@ -314,11 +319,11 @@
         }
 
         .step-number.amber {
-            background: var(--amber-action);
+            background: var(--light-blue-highlight);
         }
 
         .process-step h4 {
-            color: var(--gray-secondary);
+            color: var(--navy-primary);
             margin-bottom: 0.5rem;
             font-weight: bold;
         }
@@ -331,7 +336,7 @@
 
         /* ===== BENEFITS SECTION ===== */
         .benefits-section {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--light-blue-secondary) 100%);
             color: var(--white-pure);
             padding: 40px;
             border-radius: 12px;
@@ -382,15 +387,15 @@
             background: var(--white-clean);
             padding: 25px;
             border-radius: 8px;
-            border-left: 3px solid var(--teal-primary);
+            border-left: 3px solid var(--navy-primary);
         }
 
         .scenario-card.amber {
-            border-left-color: var(--amber-action);
+            border-left-color: var(--light-blue-highlight);
         }
 
         .scenario-card h4 {
-            color: var(--gray-secondary);
+            color: var(--navy-primary);
             margin-bottom: 0.5rem;
             font-weight: bold;
         }
@@ -406,7 +411,7 @@
             background: var(--white-pure);
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
             text-align: center;
             margin-bottom: 60px;
         }
@@ -425,11 +430,11 @@
         }
 
         .pricing-card.featured {
-            border: 2px solid var(--teal-primary);
+            border: 2px solid var(--navy-primary);
         }
 
         .pricing-card h4 {
-            color: var(--gray-secondary);
+            color: var(--light-blue-secondary);
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -441,7 +446,7 @@
         }
 
         .price {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 1.1rem;
             font-weight: bold;
         }
@@ -455,7 +460,7 @@
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--light-blue-secondary) 100%);
             color: var(--white-pure);
             padding: 50px 40px;
             border-radius: 12px;
@@ -493,40 +498,42 @@
         }
 
         .related-services h3 {
-            color: var(--teal-primary);
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
+            color: var(--navy-primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
         .service-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .service-link {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid var(--teal-primary);
-            border-radius: 6px;
+            padding: 12px 25px;
+            border: 2px solid var(--navy-primary);
+            border-radius: 8px;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .service-link:hover {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
+            transform: translateY(-2px);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-secondary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
+            margin-top: 60px;
         }
 
         footer p {
@@ -535,12 +542,13 @@
         }
 
         footer a {
-            color: var(--gold-highlight);
+            color: var(--white-pure);
             text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: var(--light-blue-highlight);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -756,46 +764,28 @@
 
             </div>
 
-            <!-- Pricing -->
-            <div class="pricing-section">
-                <h3 class="section-title">Flexible Pricing Options</h3>
-                <div class="pricing-grid">
-                    
-                    <div class="pricing-card">
-                        <h4>Hourly Support</h4>
-                        <p>Perfect for short-term assistance and specific tasks</p>
-                        <!--<div class="price">Custom Quote</div>-->
-                    </div>
-
-                    <div class="pricing-card">
-                        <h4>Project-Based</h4>
-                        <p>Fixed scope projects with clear deliverables</p>
-                        <!--<div class="price">Custom Quote</div>-->
-                    </div>
-                </div>
-            </div>
-
             <!-- CTA Section -->
             <div class="cta-section">
                 <h3>Ready to Get the Support You Need?</h3>
                 <p>Stop trying to do everything yourself. Get professional business support that scales with your needs.</p>
                 <div class="cta-buttons">
                     <a href="/pages/contact.html" class="cta-button">Get Started Today</a>
-                    <a href="tel:+61400953189" class="secondary-button">Call: 0400 953 189</a>
                 </div>
             </div>
 
             <!-- Related Services -->
-            <!--<div class="related-services">
-                <h3>Related Services</h3>
+            <section class="related-services">
+                <h3>Related Business Improvement Services</h3>
                 <div class="service-links">
-                    <a href="services.html" class="service-link">All Services</a>
-                    <a href="#" class="service-link">Strategic Planning</a>
-                    <a href="#" class="service-link">Process Improvement</a>
+                    <a href="/pages/services.html" class="service-link">All Services</a>
+                    <a href="/services/project-management.html" class="service-link">Project Management</a>
+                    <a href="/services/process-improvement.html" class="service-link">Process Improvement</a>
+                    <!--<a href="strategic-planning.html" class="service-link">Strategic Planning</a>-->
+                    <!--<a href="operations-management.html" class="service-link">Operations Management</a>-->
                 </div>
-            </div>-->
+            </section>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>

@@ -90,12 +90,12 @@
         /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
         :root {
             /* Core Brand Colors */
-            --teal-primary: #0f766e;
-            --gray-secondary: #374151;
+            --teal-primary: #1e3a8a;
+            --gray-secondary: #7dd3fc;
             
             /* Strategic Accents */
-            --amber-action: #d97706;
-            --gold-highlight: #fbbf24;
+            --amber-action: #1e3a8a;
+            --gold-highlight: #7dd3fc;
             
             /* Supporting Colors */
             --gray-text: #64748b;
@@ -129,7 +129,7 @@
         /* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
         nav {
             background: var(--teal-primary);
-            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -300,7 +300,7 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -320,7 +320,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
             z-index: 1;
         }
 
@@ -363,7 +363,7 @@
         }
 
         .cta-button:hover {
-            background: #b45309;
+            background: #7dd3fc;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
         }
@@ -442,7 +442,7 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-secondary);
+            background: var(--teal-primary);  /* ← Changed to navy blue */
             color: var(--white-pure);
             text-align: center;
             padding: 2rem 0;
@@ -454,11 +454,12 @@
         }
 
         footer a {
-            color: var(--gold-highlight);
+            color: var(--white-pure);  /* ← Changed to white */
             text-decoration: none;
         }
 
         footer a:hover {
+            color: var(--gray-secondary);  /* ← Hover to light blue */
             text-decoration: underline;
         }
 
@@ -539,8 +540,8 @@
         }
 
         .cookie-accept:hover {
-            background: #b45309;
-            border-color: #b45309;
+            background: #7dd3fc;
+            border-color: #7dd3fc;
             transform: translateY(-1px);
         }
 

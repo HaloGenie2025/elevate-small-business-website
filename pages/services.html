@@ -34,13 +34,13 @@
     <style>
         /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
         :root {
-            /* Core Brand Colors */
-            --teal-primary: #0f766e;
-            --gray-secondary: #374151;
+        /* Core Brand Colors */
+            --navy-primary: #1e3a8a;
+            --light-blue-secondary: #7dd3fc;
             
             /* Strategic Accents */
-            --amber-action: #d97706;
-            --gold-highlight: #fbbf24;
+            --navy-action: #1e3a8a;
+            --light-blue-highlight: #7dd3fc;
             
             /* Supporting Colors */
             --gray-text: #64748b;
@@ -73,8 +73,8 @@
 
         /* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
         nav {
-            background: var(--teal-primary);
-            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            background: var(--navy-primary);
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -109,11 +109,11 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
         }
 
         .nav-links a.active {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
             font-weight: bold;
         }
 
@@ -173,7 +173,7 @@
         }
 
         .mobile-menu-header {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             padding: 1rem;
             display: flex;
@@ -216,24 +216,24 @@
             display: block;
             padding: 1rem 1.5rem;
             text-decoration: none;
-            color: var(--gray-secondary);
+            color: var(--light-blue-secondary);
             font-weight: 500;
             transition: all 0.3s ease;
         }
 
         .mobile-nav-links a:hover {
             background-color: var(--white-clean);
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             padding-left: 2rem;
         }
 
         .mobile-nav-links a.active {
-            background-color: var(--teal-primary);
+            background-color: var(--navy-primary);
             color: var(--white-pure);
         }
 
         .mobile-nav-links a.active:hover {
-            background-color: var(--teal-primary);
+            background-color: var(--navy-primary);
             color: var(--white-pure);
             padding-left: 1.5rem;
         }
@@ -245,7 +245,7 @@
 
         /* ===== HERO SECTION ===== */
         .about-hero {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -264,7 +264,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
             z-index: 1;
         }
 
@@ -296,7 +296,7 @@
             font-size: 1.3rem;
             opacity: 0.9;
             font-style: italic;
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
             line-height: 1.4;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             position: relative;
@@ -306,7 +306,7 @@
         /* ===== BUTTONS ===== */
         .cta-button {
             display: inline-block;
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 15px 30px;
             text-decoration: none;
@@ -314,13 +314,13 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .cta-button:hover {
-            background: #b45309;
+            background: #1a365d;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         .secondary-button {
@@ -338,7 +338,7 @@
 
         .secondary-button:hover {
             background: var(--white-pure);
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             transform: translateY(-2px);
         }
 
@@ -356,7 +356,7 @@
 
         .intro-text {
             font-size: 1.3rem;
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-weight: 500;
             margin-bottom: 1.5rem;
             line-height: 1.6;
@@ -379,13 +379,13 @@
             background: var(--white-pure);
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
             border: 1px solid var(--gray-light);
             transition: all 0.3s ease;
         }
 
         .service-card a:hover {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure) !important;
             transform: translateY(-1px);
         }
@@ -397,7 +397,7 @@
         }
 
         .service-card h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: bold;
@@ -410,7 +410,7 @@
         }
 
         .service-card p strong {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
         }
 
         .service-benefits {
@@ -430,12 +430,12 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--amber-action);
+            color: var(--light-blue-highlight);
             font-weight: bold;
         }
 
         .service-outcome {
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 0.5rem 1rem;
             border-radius: 6px;
@@ -453,7 +453,7 @@
 
         .services-process h2 {
             text-align: center;
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2.5rem;
             margin-bottom: 3rem;
             font-weight: bold;
@@ -471,12 +471,12 @@
             padding: 2rem;
             background: var(--white-pure);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.08);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.08);
             border: 1px solid var(--gray-light);
         }
 
         .step-number {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             width: 50px;
             height: 50px;
@@ -490,7 +490,7 @@
         }
 
         .process-step h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -508,7 +508,7 @@
 
         .investment-content h2 {
             text-align: center;
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2.5rem;
             margin-bottom: 3rem;
             font-weight: bold;
@@ -527,11 +527,11 @@
             border-radius: 12px;
             text-align: center;
             border: 1px solid var(--gray-light);
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.08);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.08);
         }
 
         .philosophy-card h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -543,7 +543,7 @@
 
         /* ===== CTA SECTION ===== */
         .services-cta {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--light-blue-secondary) 100%);
             color: var(--white-pure);
             padding: 4rem 0;
             text-align: center;
@@ -585,7 +585,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             border: none;
             border-radius: 50%;
@@ -593,20 +593,20 @@
             height: 50px;
             font-size: 1.2rem;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
             transition: all 0.3s ease;
             z-index: 999;
         }
 
         .back-to-top:hover {
-            background: var(--amber-action);
+            background: var(--navy-action);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-secondary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             text-align: center;
             padding: 2rem 0;
@@ -618,12 +618,13 @@
         }
 
         footer a {
-            color: var(--gold-highlight);
+            color: var(--white-pure);
             text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: var(--light-blue-highlight);
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
@@ -766,7 +767,7 @@
                         <li>Eliminate the "it's all in my head" problem</li>
                     </ul>
                     <div style="margin-top: 1.5rem; text-align: center;">
-                        <a href="/services/process-improvement.html" style="color: var(--teal-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--teal-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
+                        <a href="/services/process-improvement.html" style="color: var(--navy-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--navy-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
                             Learn More →
                         </a>
                     </div>
@@ -783,7 +784,7 @@
                         <li>Regular check-ins that keep things on track</li>
                     </ul>
                     <div style="margin-top: 1.5rem; text-align: center;">
-                        <a href="/services/project-management.html" style="color: var(--teal-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--teal-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
+                        <a href="/services/project-management.html" style="color: var(--navy-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--navy-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
                             Learn More →
                         </a>
                     </div>
@@ -836,7 +837,7 @@
                         <li>Mix of hands on help and strategic guidance</li>
                     </ul>
                     <div style="margin-top: 1.5rem; text-align: center;">
-                        <a href="/services/business-support.html" style="color: var(--teal-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--teal-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
+                        <a href="/services/business-support.html" style="color: var(--navy-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border: 1px solid var(--navy-primary); border-radius: 6px; transition: all 0.3s ease; display: inline-block;">
                             Learn More →
                         </a>
                     </div>

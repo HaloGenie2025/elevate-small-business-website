@@ -35,12 +35,12 @@
         /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
         :root {
             /* Core Brand Colors */
-            --teal-primary: #0f766e;
-            --gray-secondary: #374151;
+            --navy-primary: #1e3a8a;
+            --light-blue-secondary: #7dd3fc;
             
             /* Strategic Accents */
-            --amber-action: #d97706;
-            --gold-highlight: #fbbf24;
+            --navy-action: #1e3a8a;
+            --light-blue-highlight: #7dd3fc;
             
             /* Supporting Colors */
             --gray-text: #64748b;
@@ -73,8 +73,8 @@
 
         /* ===== NAVIGATION WITH MOBILE SUPPORT ===== */
         nav {
-            background: var(--teal-primary);
-            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            background: var(--navy-primary);
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -109,11 +109,11 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
         }
 
         .nav-links a.active {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
             font-weight: bold;
         }
 
@@ -173,7 +173,7 @@
         }
 
         .mobile-menu-header {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             padding: 1rem;
             display: flex;
@@ -216,24 +216,24 @@
             display: block;
             padding: 1rem 1.5rem;
             text-decoration: none;
-            color: var(--gray-secondary);
+            color: var(--light-blue-secondary);
             font-weight: 500;
             transition: all 0.3s ease;
         }
 
         .mobile-nav-links a:hover {
             background-color: var(--white-clean);
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             padding-left: 2rem;
         }
 
         .mobile-nav-links a.active {
-            background-color: var(--teal-primary);
+            background-color: var(--navy-primary);
             color: var(--white-pure);
         }
 
         .mobile-nav-links a.active:hover {
-            background-color: var(--teal-primary);
+            background-color: var(--navy-primary);
             color: var(--white-pure);
             padding-left: 1.5rem;
         }
@@ -245,7 +245,7 @@
 
         /* ===== CONTACT HERO SECTION ===== */
         .contact-hero {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(55, 65, 81, 0.5) 100%), url('/images/Kylie-Photo1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -265,7 +265,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(55, 65, 81, 0.6) 100%);
             z-index: 1;
         }
 
@@ -295,7 +295,7 @@
         /* ===== BUTTONS ===== */
         .cta-button {
             display: inline-block;
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 15px 30px;
             text-decoration: none;
@@ -303,13 +303,13 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .cta-button:hover {
-            background: #b45309;
+            background: #1a365d;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         /* ===== CONTACT OPTIONS SECTION ===== */
@@ -330,7 +330,7 @@
             background: var(--white-pure);
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
             text-align: center;
             border: 1px solid var(--gray-light);
             transition: all 0.3s ease;
@@ -338,12 +338,12 @@
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.15);
-            border-color: var(--teal-primary);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+            border-color: var(--navy-primary);
         }
 
         .contact-card.featured {
-            border: 2px solid var(--teal-primary);
+            border: 2px solid var(--navy-primary);
             background: linear-gradient(135deg, var(--white-pure) 0%, #f0fdfa 100%);
         }
 
@@ -354,7 +354,7 @@
         }
 
         .contact-card h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: bold;
@@ -367,11 +367,11 @@
         }
 
         .contact-link {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            border: 2px solid var(--teal-primary);
+            border: 2px solid var(--navy-primary);
             padding: 10px 20px;
             border-radius: 8px;
             display: inline-block;
@@ -379,7 +379,7 @@
         }
 
         .contact-link:hover {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
         }
 
@@ -395,7 +395,7 @@
         }
 
         .form-intro h2 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2.2rem;
             margin-bottom: 1rem;
             font-weight: bold;
@@ -413,7 +413,7 @@
             background: var(--white-pure);
             padding: 3rem;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
             border: 1px solid var(--gray-light);
         }
 
@@ -430,7 +430,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--gray-secondary);
+            color: var(--navy-primary);  /* ← Changed to navy blue */
             font-weight: 600;
             font-size: 0.95rem;
         }
@@ -451,8 +451,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--teal-primary);
-            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+            border-color: var(--navy-primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
 
         .form-group textarea {
@@ -484,11 +484,11 @@
         .checkbox-item input[type="checkbox"] {
             width: auto;
             margin-right: 8px;
-            accent-color: var(--teal-primary);
+            accent-color: var(--navy-primary);
         }
 
         .form-submit {
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             border: none;
             padding: 15px 30px;
@@ -499,13 +499,13 @@
             transition: all 0.3s ease;
             width: 100%;
             margin-top: 1rem;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .form-submit:hover {
-            background: #b45309;
+            background: #1a365d;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         .form-note {
@@ -530,7 +530,7 @@
         }
 
         .info-item h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 0.8rem;
             font-size: 1.3rem;
             font-weight: bold;
@@ -546,7 +546,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             border: none;
             border-radius: 50%;
@@ -554,20 +554,20 @@
             height: 50px;
             font-size: 1.2rem;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
             transition: all 0.3s ease;
             z-index: 999;
         }
 
         .back-to-top:hover {
-            background: var(--amber-action);
+            background: var(--navy-action);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-secondary);
+            background: var(--navy-primary);  /* ← Changed to navy blue */
             color: var(--white-pure);
             text-align: center;
             padding: 2rem 0;
@@ -579,11 +579,12 @@
         }
 
         footer a {
-            color: var(--gold-highlight);
+            color: var(--white-pure);  /* ← Changed to white */
             text-decoration: none;
         }
 
         footer a:hover {
+            color: var(--light-blue-highlight);  /* ← Hover to light blue */
             text-decoration: underline;
         }
 

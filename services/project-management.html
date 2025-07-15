@@ -117,16 +117,20 @@
         <style>
         /* ===== BRAND COLORS ===== */
         :root {
-            --teal-primary: #0f766e;
-            --gray-secondary: #374151;
-            --amber-action: #d97706;
-            --gold-highlight: #fbbf24;
+            /* Core Brand Colors */
+            --navy-primary: #1e3a8a;
+            --light-blue-secondary: #7dd3fc;
+            
+            /* Strategic Accents */
+            --navy-action: #1e3a8a;
+            --light-blue-highlight: #7dd3fc;
+            
+            /* Supporting Colors */
             --gray-text: #64748b;
             --gray-light: #e2e8f0;
             --white-clean: #f8fafc;
             --white-pure: #ffffff;
         }
-
         /* Reset and Base */
         * {
             margin: 0;
@@ -151,8 +155,8 @@
 
         /* ===== NAVIGATION ===== */
         nav {
-            background: var(--teal-primary);
-            box-shadow: 0 2px 10px rgba(15, 118, 110, 0.15);
+            background: var(--navy-primary);
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -187,11 +191,11 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
         }
 
         .nav-links a.active {
-            color: var(--gold-highlight);
+            color: var(--light-blue-highlight);
             font-weight: bold;
         }
 
@@ -206,7 +210,7 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.9) 0%, rgba(55, 65, 81, 0.9) 100%), 
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(55, 65, 81, 0.9) 100%), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%230f766e;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%23374151;stop-opacity:0.1" /></linearGradient></defs><rect width="1000" height="300" fill="url(%23grad)"/></svg>');
             color: var(--white-pure);
             padding: 100px 0 80px 0;
@@ -240,7 +244,7 @@
         /* ===== BUTTONS ===== */
         .cta-button {
             display: inline-block;
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 18px 35px;
             text-decoration: none;
@@ -248,7 +252,7 @@
             font-weight: bold;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -256,7 +260,7 @@
         .cta-button:hover {
             background: #b45309;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
         }
 
         .secondary-button {
@@ -274,7 +278,7 @@
 
         .secondary-button:hover {
             background: var(--white-pure);
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             transform: translateY(-2px);
         }
 
@@ -291,7 +295,7 @@
         }
 
         .intro-section h2 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2.2rem;
             margin-bottom: 2rem;
             font-weight: 700;
@@ -305,7 +309,7 @@
         }
 
         .section-title {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 2rem;
             margin-bottom: 3rem;
             text-align: center;
@@ -318,7 +322,7 @@
             display: block;
             width: 60px;
             height: 4px;
-            background: var(--amber-action);
+            background: var(--light-blue-highlight);
             margin: 15px auto 0;
             border-radius: 2px;
         }
@@ -328,7 +332,7 @@
             background: var(--white-pure);
             padding: 60px 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
             margin-bottom: 80px;
             border: 1px solid var(--gray-light);
         }
@@ -389,7 +393,7 @@
         .problem-side ul,
         .solution-side ul {
             margin-left: 20px;
-            color: var(--gray-secondary);
+            color: #374151;
         }
 
         .problem-side ul li,
@@ -397,6 +401,7 @@
             margin-bottom: 0.8rem;
             line-height: 1.6;
             font-weight: 500;
+            color: #374151;
         }
 
         /* ===== CARDS ===== */
@@ -417,7 +422,7 @@
             background: var(--white-pure);
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.1);
             border: 1px solid var(--gray-light);
             transition: all 0.4s ease;
             position: relative;
@@ -431,16 +436,16 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--teal-primary) 0%, var(--amber-action) 100%);
+            background: linear-gradient(90deg, var(--navy-primary) 0%, var(--navy-action) 100%);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(15, 118, 110, 0.2);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.2);
         }
 
         .card h4 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             margin-bottom: 1.5rem;
             font-size: 1.4rem;
             font-weight: 700;
@@ -462,7 +467,7 @@
             background: var(--white-pure);
             padding: 60px 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
             margin-bottom: 80px;
         }
 
@@ -483,7 +488,7 @@
             position: absolute;
             top: 25px;
             right: -15px;
-            color: var(--amber-action);
+            color: var(--light-blue-highlight);
             font-size: 2rem;
             font-weight: bold;
         }
@@ -493,7 +498,7 @@
         }
 
         .step-number {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, #0d5858 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, #1a365d 100%);
             color: var(--white-pure);
             width: 60px;
             height: 60px;
@@ -504,15 +509,15 @@
             margin: 0 auto 1.5rem auto;
             font-size: 1.8rem;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .step-number.amber {
-            background: linear-gradient(135deg, var(--amber-action) 0%, #b45309 100%);
+            background: linear-gradient(135deg, var(--light-blue-highlight) 0%, #60a5fa 100%);
         }
 
         .process-step h4 {
-            color: var(--gray-secondary);
+            color: var(--navy-primary);
             margin-bottom: 1rem;
             font-weight: 700;
             font-size: 1.1rem;
@@ -527,7 +532,7 @@
 
         /* ===== BENEFITS SECTION ===== */
         .benefits-section {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--light-blue-secondary) 100%);
             color: var(--white-pure);
             padding: 60px 50px;
             border-radius: 15px;
@@ -595,22 +600,22 @@
             background: var(--white-pure);
             padding: 25px;
             border-radius: 12px;
-            border-left: 4px solid var(--teal-primary);
-            box-shadow: 0 5px 15px rgba(15, 118, 110, 0.1);
+            border-left: 4px solid var(--navy-primary);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.1);
             transition: all 0.3s ease;
         }
 
         .scenario-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(15, 118, 110, 0.15);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
         }
 
         .scenario-card.amber {
-            border-left-color: var(--amber-action);
+            border-left-color: var(--navy-action);
         }
 
         .scenario-card h4 {
-            color: var(--gray-secondary);
+            color: var(--light-blue-secondary);
             margin-bottom: 1rem;
             font-weight: 700;
             font-size: 1.1rem;
@@ -628,7 +633,7 @@
             background: var(--white-pure);
             padding: 60px 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
             text-align: center;
             margin-bottom: 80px;
         }
@@ -649,9 +654,9 @@
         }
 
         .pricing-card.featured {
-            border: 3px solid var(--teal-primary);
+            border: 3px solid var(--navy-primary);
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.2);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
         }
 
         .pricing-card.featured::before {
@@ -660,7 +665,7 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--amber-action);
+            background: var(--navy-action);
             color: var(--white-pure);
             padding: 8px 20px;
             border-radius: 20px;
@@ -669,7 +674,7 @@
         }
 
         .pricing-card h4 {
-            color: var(--gray-secondary);
+            color: var(--light-blue-secondary);
             margin-bottom: 1.5rem;
             font-weight: 700;
             font-size: 1.3rem;
@@ -682,7 +687,7 @@
         }
 
         .price {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -696,7 +701,7 @@
             background: #f1f5f9;
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid var(--amber-action);
+            border-left: 4px solid var(--navy-action);
         }
 
         /* ===== FAQ SECTION ===== */
@@ -704,7 +709,7 @@
             background: var(--white-pure);
             padding: 60px 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
             margin-bottom: 80px;
         }
 
@@ -719,7 +724,7 @@
             background: var(--white-clean);
             padding: 20px;
             font-weight: 700;
-            color: var(--gray-secondary);
+            color: var(--navy-primary);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -739,7 +744,7 @@
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, var(--teal-primary) 0%, var(--gray-secondary) 100%);
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--light-blue-secondary) 100%);
             color: var(--white-pure);
             padding: 70px 50px;
             border-radius: 15px;
@@ -796,7 +801,7 @@
         }
 
         .related-services h3 {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             font-size: 1.8rem;
             margin-bottom: 2rem;
             font-weight: 700;
@@ -810,24 +815,24 @@
         }
 
         .service-link {
-            color: var(--teal-primary);
+            color: var(--navy-primary);
             text-decoration: none;
             padding: 12px 25px;
-            border: 2px solid var(--teal-primary);
+            border: 2px solid var(--navy-primary);
             border-radius: 8px;
             transition: all 0.3s ease;
             font-weight: 600;
         }
 
         .service-link:hover {
-            background: var(--teal-primary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             transform: translateY(-2px);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-secondary);
+            background: var(--navy-primary);
             color: var(--white-pure);
             text-align: center;
             padding: 3rem 0;
@@ -840,13 +845,14 @@
         }
 
         footer a {
-            color: var(--gold-highlight);
+            color: var(--white-pure);
             text-decoration: none;
             font-weight: 500;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: var(--light-blue-highlight);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1030,13 +1036,13 @@
             <section aria-labelledby="timeline-heading">
                 <h3 id="timeline-heading" class="section-title">From Chaos to Completion: Your Project Journey</h3>
                 
-                <div style="background: var(--white-pure); padding: 60px 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1); margin-bottom: 80px; border: 1px solid var(--gray-light);">
+                <div style="background: var(--white-pure); padding: 60px 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1); margin-bottom: 80px; border: 1px solid var(--gray-light);">
                     
                     <!-- Timeline Container -->
                     <div style="position: relative; margin: 40px 0;">
                         
                         <!-- Main Timeline Line -->
-                        <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal-primary) 0%, var(--amber-action) 100%); border-radius: 2px; z-index: 1;"></div>
+                        <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--navy-primary) 0%, var(--navy-action) 100%); border-radius: 2px; z-index: 1;"></div>
                         
                         <!-- Timeline Phases -->
                         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; z-index: 2;">
@@ -1052,19 +1058,19 @@
                             
                             <!-- Phase 2: Assessment -->
                             <div style="text-align: center; position: relative;">
-                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--amber-action), #b45309); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); border: 4px solid var(--white-pure);">
+                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--navy-action), #b45309); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3); border: 4px solid var(--white-pure);">
                                     <span style="font-size: 2rem;">🔍</span>
                                 </div>
-                                <h4 style="color: var(--amber-action); margin-bottom: 10px; font-weight: 700;">Health Check</h4>
+                                <h4 style="color: var(--navy-action); margin-bottom: 10px; font-weight: 700;">Health Check</h4>
                                 <p style="color: var(--gray-text); font-size: 0.9rem; line-height: 1.4;">Identify what's really causing the delays and overruns</p>
                             </div>
                             
                             <!-- Phase 3: System Design -->
                             <div style="text-align: center; position: relative;">
-                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--teal-primary), #0d5858); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3); border: 4px solid var(--white-pure);">
+                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--navy-primary), #0d5858); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3); border: 4px solid var(--white-pure);">
                                     <span style="font-size: 2rem;">⚙️</span>
                                 </div>
-                                <h4 style="color: var(--teal-primary); margin-bottom: 10px; font-weight: 700;">System Setup</h4>
+                                <h4 style="color: var(--navy-primary); margin-bottom: 10px; font-weight: 700;">System Setup</h4>
                                 <p style="color: var(--gray-text); font-size: 0.9rem; line-height: 1.4;">Create simple tracking and management frameworks</p>
                             </div>
                             
@@ -1082,28 +1088,28 @@
                     
                     <!-- Project Success Metrics Dashboard -->
                     <div style="margin-top: 60px;">
-                        <h4 style="text-align: center; color: var(--teal-primary); margin-bottom: 30px; font-size: 1.3rem;">What Good Project Management Actually Delivers</h4>
+                        <h4 style="text-align: center; color: var(--navy-primary); margin-bottom: 30px; font-size: 1.3rem;">What Good Project Management Actually Delivers</h4>
                         
                         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
                             
                             <!-- Metric 1: Time -->
                             <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 25px; border-radius: 12px; text-align: center; border-left: 4px solid #0284c7;">
                                 <div style="font-size: 2.5rem; font-weight: bold; color: #0284c7; margin-bottom: 10px;">75%</div>
-                                <div style="color: var(--gray-secondary); font-weight: 600; margin-bottom: 5px;">On-Time Delivery</div>
+                                <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">On-Time Delivery</div>
                                 <div style="color: var(--gray-text); font-size: 0.9rem;">vs 34% industry average <a href="https://clickup.com/blog/project-management-statistics/">*</a></div>
                             </div>
                             
                             <!-- Metric 2: Budget -->
                             <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 25px; border-radius: 12px; text-align: center; border-left: 4px solid #059669;">
                                 <div style="font-size: 2.5rem; font-weight: bold; color: #059669; margin-bottom: 10px;">80%</div>
-                                <div style="color: var(--gray-secondary); font-weight: 600; margin-bottom: 5px;">Within Budget</div>
+                                <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">Within Budget</div>
                                 <div style="color: var(--gray-text); font-size: 0.9rem;">vs 34% industry average <a href="https://quixy.com/blog/important-project-management-statistics/">*</a></div>
                             </div>
                             
                             <!-- Metric 3: Productivity -->
-                            <div style="background: linear-gradient(135deg, #fefce8, #fef3c7); padding: 25px; border-radius: 12px; text-align: center; border-left: 4px solid var(--amber-action);">
-                                <div style="font-size: 2.5rem; font-weight: bold; color: var(--amber-action); margin-bottom: 10px;">50%</div>
-                                <div style="color: var(--gray-secondary); font-weight: 600; margin-bottom: 5px;">Productivity Boost</div>
+                            <div style="background: linear-gradient(135deg, #fefce8, #fef3c7); padding: 25px; border-radius: 12px; text-align: center; border-left: 4px solid var(--navy-action);">
+                                <div style="font-size: 2.5rem; font-weight: bold; color: var(--navy-action); margin-bottom: 10px;">50%</div>
+                                <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">Productivity Boost</div>
                                 <div style="color: var(--gray-text); font-size: 0.9rem;">Through proper systems <a href="https://quixy.com/blog/important-project-management-statistics/">*</a></div>
                             </div>
                             
@@ -1175,8 +1181,7 @@
                     <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 12px; padding: 30px; max-width: 600px; margin: 0 auto;">
                         <h4 style="color: var(--white-pure); font-size: 1.5rem; margin-bottom: 1rem;">Free Project Health Check</h4>
                         <p style="color: var(--white-pure); font-size: 1.1rem; margin-bottom: 1.5rem;">30 minute consultation to identify your biggest project pain points and quick wins you can implement immediately.</p>
-                        <div style="color: var(--gold-highlight); font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">No Cost</div>
-                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-bottom: 1.5rem;">30 minute call • Immediate insights • Quick wins identified • No obligation</p>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-bottom: 1.5rem;">• Immediate insights • Quick wins identified • No obligation</p>
                         <a href="/pages/contact.html" class="cta-button">Book Your Free Health Check</a>
                     </div>
                 </div>
@@ -1233,7 +1238,6 @@
                 <p>Let's have a quick conversation about your biggest project challenges. I'll share some immediate insights you can use right away - no strings attached.</p>
                 <div class="cta-buttons">
                     <a href="/pages/contact.html" class="cta-button">Book Free 30 Min Call</a>
-                    <a href="tel:+61400953189" class="secondary-button">Call: 0400 953 189</a>
                 </div>
             </section>
 

@@ -90,11 +90,11 @@
         /* ===== ELEVATE SMALL BUSINESS BRAND COLORS ===== */
         :root {
             /* Core Brand Colors */
-            --teal-primary: #1e3a8a;
+            --teal-primary: #0c1c4c;
             --gray-secondary: #7dd3fc;
             
             /* Strategic Accents */
-            --amber-action: #1e3a8a;
+            --amber-action: #0c1c4c;
             --gold-highlight: #7dd3fc;
             
             /* Supporting Colors */
@@ -144,10 +144,10 @@
             padding: 1rem 20px;
         }
 
-        .logo h2 {
-            color: var(--white-pure);
-            font-size: 1.5rem;
-            font-weight: bold;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            max-width: 200px;
         }
 
         .nav-links {
@@ -359,13 +359,13 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 2px 15px var(--white-pure);
         }
 
         .cta-button:hover {
             background: #7dd3fc;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            box-shadow: 0 4px 15px var(--white-pure);
         }
 
         /* ===== SERVICES PREVIEW ===== */
@@ -633,7 +633,7 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <h2>Elevate Small Business</h2>
+                <img src="/images/Elevate Small Business - rectangle.jpg" alt="Elevate Small Business" class="logo-img">
             </div>
             <ul class="nav-links">
                 <li><a href="/index.html" class="active">Home</a></li>
